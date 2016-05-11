@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  ul
+    each feature in ['email', 'password', 'firstname', 'lastname', 'username', 'likes', 'createdAt', 'updatedAt']
+      li= feature + ': ' + account[feature]

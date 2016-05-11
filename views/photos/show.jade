@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  ul
+    each feature in ['_author', 'file', 'tags', 'exif', 'location', 'likes', 'views', 'downloads']
+      li= feature + ': ' + photo[feature]
+      
+  img(src='#{photo.file}')  

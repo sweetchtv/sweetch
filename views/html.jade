@@ -1,0 +1,13 @@
+doctype html
+html(lang='ko' ng-app='phozly')
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='#{cssPath}')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js')
+    script(src='/javascripts/application.js' defer)
+    script(src='#{jsPath}' defer)
+    
+block layout  

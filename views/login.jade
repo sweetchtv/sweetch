@@ -1,0 +1,15 @@
+extends html    
+
+block layout
+  body.flex-vertical.full-width
+    img.logo(src='/images/phoz.png')
+    h1 Login
+    h2 Welcome back.
+    form.login.full-width(action='/login', method='post')
+      label(for='email') Email address
+      input#email.full-width(name='email' type='text' placeholder='Email') 
+      label(for='password') Password
+      input#password.full-width(name='password' type='password' placeholder='Password') 
+      button.full-width(type='submit') Login
+    p Don't have an account? 
+      a(href='/join') Join

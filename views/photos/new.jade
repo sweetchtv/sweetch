@@ -1,0 +1,43 @@
+extends ../html  
+
+block layout
+
+  body
+    form(action='/photos' method='post' enctype='multipart/form-data' ng-controller='newPhoto')
+      div.underlay.flex-vertical.full-width
+        p We'll review your photo for publishing and if your submission is accepted, your work will be distributed for free under the Unsplash license.
+        button#imageUploaderAlias(type='button') Add a photo
+        
+      div.hidden  
+        input#imageUploader(name='file' type='file') 
+        input(ng-repeat='(index, tag) in tags track by $index' ng-attr-name="{{'tags['+index+']'}}" ng-attr-value='{{tag}}')
+      div.overlay.flex-vertical.full-width(ng-style="{'background-image':'linear-gradient(to bottom, rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.7)), url('+file+')'}")
+        div#tags.flex-vertical.active
+          label(for='tags') Add some tags:
+          div.tagsinput.flex-horizontal.full-width
+            div.tag(ng-repeat='tag in tags track by $index') {{tag}}&nbsp;&nbsp;
+              a(href='javascript:void(0)') x
+            div.addtag
+              input#tag-factory(type='text' placeholder='ex. trees, lake, forest') 
+          button#next-button(type='button') Next
+        div#exif
+          label Make
+          input(name='exif[make]' type='text' ng-attr-value='{{exif.Make}}' placeholder='--')
+          label Model
+          input(name='exif[model]' type='text' ng-attr-value='{{exif.Model}}' placeholder='--')
+          label Focal length
+          input(name='exif[focalLength]' type='text' ng-attr-value='{{exif.FocalLength}}' placeholder='--')
+          label Aperture
+          input(name='exif[apertureValue]' type='text' ng-attr-value='{{exif.ApertureValue}}' placeholder='--')
+          label ISO
+          input(name='exif[isoSpeedRatings]' type='text' ng-attr-value='{{exif.ISOSpeedRatings}}' placeholder='--')
+          label Shutter speed 
+          input(name='exif[shutterSpeedValue]' type='text' ng-attr-value='{{exif.ShutterSpeedValue}}' placeholder='--')
+          button#next-button(type='button') Next
+        div#location
+          input(name='location' type='text' placeholder='Location') 
+          button(type='submit') submit
+          
+          
+    script(src='/javascripts/exif.js')
+      

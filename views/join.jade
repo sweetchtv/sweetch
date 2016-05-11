@@ -1,0 +1,24 @@
+extends html    
+
+block layout
+  body.flex-vertical.full-width
+    img.logo(src='/images/phoz.png')
+    h1 Join
+    h2 Be a part of phozly.
+    form.join.full-width(action='/accounts', method='post')
+      div.name.flex-horizontal.full-width
+        div.firstname
+          label(for='firstname') Firstname
+          input(name='firstname' type='text' placeholder='Firstname') 
+        div.lastname
+          label(for='lastname') Lastname
+          input(name='lastname' type='text' placeholder='Lastname') 
+      label(for='email') Email address
+      input#email.full-width(name='email' type='text' placeholder='Email') 
+      label(for='username') Username
+      input(name='username' type='text' placeholder='Username') 
+      label(for='password') Password
+      input#password.full-width(name='password' type='password' placeholder='Password') 
+      button.full-width(type='submit') Join
+    p Already joined? 
+      a(href='/login') Login

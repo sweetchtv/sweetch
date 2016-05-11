@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  main.photogallery.flex-vertical(ng-controller='photogallery')
+    ul.photos
+      li.photo(ng-repeat='(index, photo) in photos' ng-attr-id="{{index}}")
+        a(ng-attr-href='{{"/photos/" + photo._id}}')
+          img(ng-attr-src='{{photo.file}}')
+        div.menus.flex-horizontal
+          div.menu-left.flex-horizontal
+            a.like-button.flex-horizontal(href='javascript:void(0)' title='Like photo' ng-click='like(index)')
+              svg(width="32" height="32" viewBox="0 0 32 32")
+                path(d="M17.402 28.54c-0.764 0.796-2.006 0.796-2.77 0l-12.284-12.79c-3.13-3.148-3.13-8.246 0-11.39 3.128-3.144 8.206-3.144 11.336 0l2.332 2.848 2.332-2.848c3.132-3.144 8.208-3.144 11.336 0 3.132 3.144 3.132 8.242 0 11.39l-12.282 12.79z")
+              span(ng-bind='photo.likes')
+            a.add-to-collection-button(title='Add to collection')
+              svg(width="32" height="32" viewBox="0 0 32 32")
+                path(d="M30.67,12.93H19.07V1.33A1.33,1.33,0,0,0,17.74,0H14.26a1.33,1.33,0,0,0-1.33,1.33V12.93H1.33A1.33,1.33,0,0,0,0,14.26v3.48a1.33,1.33,0,0,0,1.33,1.33H12.93V30.67A1.33,1.33,0,0,0,14.26,32h3.48a1.33,1.33,0,0,0,1.33-1.33V19.07H30.67A1.33,1.33,0,0,0,32,17.74V14.26A1.33,1.33,0,0,0,30.67,12.93Z")
+          div.menu-center.flex-horizontal
+            a.account-profile-button.flex-horizontal
+              div.circle-cropper
+                img(ng-attr-src='{{photo._author.profileImage||"/images/avatar.jpg"}}')
+              span.fullname(ng-bind='photo._author.fullname')
+          div.menu-right.flex-horizontal
+            a.download-button(title='Download photo') Download
+        .overlay

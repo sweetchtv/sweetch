@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  form(action='/accounts' method='post')
+    input(name='email' type='text' placeholder='Email') 
+    input(name='password' type='password' placeholder='Password') 
+    input(name='firstname' type='text' placeholder='Firstname') 
+    input(name='lastname' type='text' placeholder='Lastname') 
+    input(name='username' type='text' placeholder='Username') 
+    button(type='submit') submit

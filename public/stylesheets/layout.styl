@@ -1,0 +1,161 @@
+.full-width
+  width: 100%
+
+.flex-horizontal
+  display: flex
+  flex-direction: row
+  align-items: center
+
+.flex-vertical
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.circle-cropper
+  width: auto
+  height: auto
+  border-radius: 50%
+  overflow: hidden
+
+input:focus
+  outline: none
+
+ul
+  list-style: none
+  padding-left: 0
+  margin-top: 0
+  margin-bottom: 0
+
+a
+  color: inherit
+  text-decoration: none
+
+body
+  *
+    display: block
+  position: relative
+  margin: 0
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif
+  font-weight: 200
+
+body>header
+  position: fixed
+  left: 0
+  top: 0
+  height: 62px
+  font-size: 11px
+  font-weight: 700
+  color: #999
+  background-color: rgba(255,255,255,0.96)
+  justify-content: space-between
+  padding: 15px 20px
+  box-sizing: border-box
+  text-transform: uppercase
+  .active
+    color: black
+  ul
+    height: 100%
+    li
+      margin: 0px
+      display: flex
+      align-items: center
+      height: 100%
+      a
+        display: flex
+        width: 100%
+        height: 100%
+        align-items: center
+  ul.nav-center
+    order: 0
+    justify-content: center
+    li
+      height: 100%
+      display: none
+      &.active
+        display: block
+        &#nav-center-element-company
+          a
+            height: 100%
+
+  ul.nav-left
+    order: -1
+    width: 45%
+    justify-content: flex-start
+    li
+      margin: 0 12px
+  ul.nav-right
+    order: 1
+    width: 45%
+    justify-content: flex-end
+    li
+      margin: 0 7px
+      height: 100%
+    li.search
+      width: 207px
+      form
+        position: relative
+        width: 100%
+        input
+          box-sizing: border-box
+          background-color: transparent
+          width: 100%
+          height: 32px
+          line-height: 32px
+          border: 0
+          border: 1px solid #ddd
+          border-radius: 20px
+          padding: 0 35px 0 12px
+        button
+          position: absolute
+          top: calc(50% - 16px)
+          right: 0
+          width: 32px
+          height: 32px
+          border: 0
+          padding: 0
+          background: transparent
+          svg
+            padding: 8px 9px 8px 2px
+            width: 100%
+            height: 100%
+            box-sizing: border-box
+    li.profile
+      *
+        height: 100%
+    li.login, li.join
+      border: 1px solid #ddd
+      border-radius: 6px
+      a
+        padding: 0 10px
+        display: flex
+        width: 100%
+        height: 100%
+        align-items: center
+    li.join
+      border: 0
+      color: white
+      background-color: #71b552
+
+body>main
+  padding: 0 20px
+  padding-top: 140px
+  &>header
+    padding-bottom: 80px
+    letter-spacing: 2px
+    a
+      color: #999
+      text-decoration: underline
+    p
+      margin: 10px 0
+    ul.sns
+      margin-top: 30px
+      margin-bottom: 36px
+      li
+        width: 24px
+        height: 32px
+        padding: 0 7px
+        a
+          svg
+            width: 24px
+            height: 24px
+            fill: #999

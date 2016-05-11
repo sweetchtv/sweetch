@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+  ul
+    each account in accounts
+      li
+        a(href='#{account.url()}')= account.email

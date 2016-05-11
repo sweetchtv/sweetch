@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  ul
+    each photo in photos 
+      li
+        a(href='#{photo.url()}')
+          img(src='#{photo.file}')

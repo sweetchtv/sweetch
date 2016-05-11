@@ -1,0 +1,63 @@
+
+main.photogallery
+  color: #999
+  ul.photos
+    li.photo
+      margin-bottom: 60px
+      img
+        width: 100%
+      .menus
+        margin-top: 18px
+        *
+          height: 100%
+        .menu-left, .menu-right
+          flex: 1
+          width: 30%
+          a
+            background-color: white
+            border: 1px solid #ddd
+            border-radius: 6px
+            margin: 0 4.5px
+            &:first-child
+              margin-left: 0
+            &:last-child
+              margin-right: 0
+            svg
+              fill: #ddd
+              height: 32px
+              margin: 0
+            &.like-button
+              padding: 0 10px
+              align-items: center
+              span
+                font-size: 11px
+                font-weight: bold
+              svg
+                fill: #f15151
+                margin-right: 4px
+                width: 15px
+            &.add-to-collection-button
+              padding: 0 12px
+              align-items: center
+              svg
+                fill: #666
+                width: 12px
+            &.download-button
+              padding: 0 11px
+              line-height: 32px
+        .menu-center
+          order: 0
+          justify-content: center
+          div.circle-cropper
+            margin-right: 10px
+            width: 32px
+            height: 32px
+            img
+              width: 100%
+              height: 100%
+        .menu-left
+          order: -1
+          justify-content: flex-start
+        .menu-right
+          order: 1
+          justify-content: flex-end
